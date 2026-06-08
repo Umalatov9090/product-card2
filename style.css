@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #515076;
+  margin: 0;
+  padding: 40px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("images/dandelion.png");
+  background-repeat: center;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 78px;
+  margin: 0;
+  text-align: center;
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.product-list.top {
+  margin-top: 40px;
+}
+
+.product-list.bottom {
+  margin-top: 30px;
+}
+
+.components-list {
+  margin-top: 0px;
+  padding: 5px;
+}
+.components-list li {
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.card {
+  background-color: #F8F8F8;
+  width: 340px;
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.card-image {
+  width: 100%;
+  max-width: 290px;
+  max-height: 245px;
+  display: block;
+  background-color: #F0F0F0;
+  border-radius: 12px;
+}
+
+.label-text {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 24px;
+  color: #A5A3B9;
+}
+
+.price-row {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-row b.price {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.price-row span.price {
+  font-size: 20px;
+  font-weight: 400;
+}
