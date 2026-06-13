@@ -29,10 +29,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   column-gap: 45px;
-  row-gap: 30px;
+  row-gap: 45px;
   justify-content: center;
   max-width: 1110px;
-  max-height: 1191px;
 }
 
 .product-list {
@@ -80,9 +79,7 @@ body {
 }
 
 .price-row b.price {
-  display: flex;
   align-items: center;
-  list-style: none;
   line-height: 24px;
   font-weight: 700;
   font-size: 20px;
