@@ -13,6 +13,15 @@ body {
   background-position: 42% 85px;
 }
 
+.title {
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 78px;
+  padding-top: 220px;
+  margin: 110px;
+  text-align: center;
+}
+
 .products {
   list-style: none;
   padding: 0;
@@ -25,6 +34,10 @@ body {
   max-width: 1110px;
   margin-top: 40px;
   margin-bottom: 30px;
+}
+
+.products__item {
+  width: 340px;
 }
 
 .product-card__components {
@@ -63,21 +76,21 @@ body {
   line-height: 24px;
   color: #A5A3B9;
 }
-.product-card__price-label {
-  float: left;
-  width: 110px;
-  height: 24px;
+
+.product-card__price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 18px;
+}
+
+.product-card__price-label {
   line-height: 24px;
   font-weight: 700;
   font-size: 20px;
 }
 
 .product-card__price-value {
-  float: right;
-  width: 180px;
-  height: 24px;
-  margin-top: 18px;
   line-height: 24px;
   text-align: right;
   font-size: 20px;
