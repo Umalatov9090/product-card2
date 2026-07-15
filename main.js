@@ -47,14 +47,12 @@ if (title) {
   });
 }
 
+ console.log("Click");
+
 if (toggleColorBtn) {
   toggleColorBtn.addEventListener('click', () => {
+    console.log( "Click");
     toggleColorBtn.classList.toggle('active');
 
-    if (toggleColorBtn.classList.contains('active')) {
-      toggleColorBtn.style.backgroundColor = yellowColorHash;
-    } else {
-      toggleColorBtn.style.backgroundColor = grayColorHash;
-    }
   });
 }
