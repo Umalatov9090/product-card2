@@ -1,4 +1,4 @@
-const userName = {
+const user = {
   name: "Abdurahim",
   surname: "Umalatov",
   age: 35,
@@ -21,15 +21,15 @@ const carData = {
   fuelType: "Petrol92",
   price: 350000,
 };
-carData.carOwner = userName;
+carData.carOwner = user.name;
 
-const MaxSpeed = automobile => {
+const setMaxSpeed = automobile => {
   if ('maxSpeed' in automobile) {
     return;
   };
   automobile.maxSpeed = 180;
 }
-MaxSpeed(carData);
+setMaxSpeed(carData);
 console.log(carData);
 
 const fruitPrice = {
@@ -41,38 +41,54 @@ const productName = {
   name: "Saudi dates",
 };
 
-const book1 = {
-  title: "The Fundamental of Tawheed",
-  author: "Shaykh Solih Al Fawzan",
-  year: 1994,
-  genre: "Religious",
-};
-const book2 = {
-  title: "Four rules of the Shariah",
-  author: "Shaykh Abdul-Aziz bin Abdullah bin Baz",
-  year: 1999,
-  genre: "Religious",
-};
-const book3 = {
-  title: "MonotheWelcome o Student of Knowledge",
-  author: "Shaykh Rabee bin Haadee al-Madkhali",
-  year: 2000,
-  genre: "Religious",
-};
-const book4 = {
-  title: "O' God!",
-  author: "Ahmad Shawki",
-  year: 1927,
-  genre: "Poetry",
-};
-const book5 = {
-  title: "I’m sorry, Maryam",
-  author: "Kamal Abukov",
-  year: 1967,
-  genre: "Novella",
-};
+const islamicBooks = [
+  {
+    title: "The Fundamental of Tawheed",
+    author: "Shaykh Solih Al Fawzan",
+    year: 1994,
+    genre: "Religious",
+  },
+  {
+    title: "Four rules of the Shariah",
+    author: "Shaykh Abdul-Aziz bin Abdullah bin Baz",
+    year: 1999,
+    genre: "Religious",
+  },
+  {
+    title: "MonotheWelcome o Student of Knowledge",
+    author: "Shaykh Rabee bin Haadee al-Madkhali",
+    year: 2000,
+    genre: "Religious",
+  },
+  islamicBooks.push({
+    title: "Highlights on the Path of the Islamic Call",
+    author: "Shaykh Muhammad Aman al Jami",
+    year: 1952,
+    genre: "Religious",
+  })
 
-const library = [book1, book2, book3, book4, book5];
+const arabicLiterature = [
+  {
+    title: "The way’s insight.",
+    author: "Mahmud Shakir",
+    year: 1963,
+    genre: "Islamic history and ideologies.",
+  },
+  {
+    title: "O' God!",
+    author: "Ahmad Shawki",
+    year: 1927,
+    genre: "Poetry",
+  },
+  {
+    title: "I’m sorry, Maryam",
+    author: "Kamal Abukov",
+    year: 1967,
+    genre: "Novella",
+  },
+];
+
+const library = [...islamicBooks, ...arabicLiterature];
 
 
 function addIsRare(array) {
@@ -86,7 +102,7 @@ function addIsRare(array) {
 
 const booksWithRare = addIsRare(library);
 
-console.log(userName);
+console.log(user);
 console.log(carData);
 console.log(fruitPrice);
 console.log(library);
