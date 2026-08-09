@@ -59,13 +59,14 @@ const islamicBooks = [
     author: "Shaykh Rabee bin Haadee al-Madkhali",
     year: 2000,
     genre: "Religious",
-  },
-  islamicBooks.push({
-    title: "Highlights on the Path of the Islamic Call",
-    author: "Shaykh Muhammad Aman al Jami",
-    year: 1952,
-    genre: "Religious",
-  })
+  }  
+];
+islamicBooks.push({
+  title: "Highlights on the Path of the Islamic Call",
+  author: "Shaykh Muhammad Aman al Jami",
+  year: 1952,
+  genre: "Religious",
+});
 
 const arabicLiterature = [
   {
