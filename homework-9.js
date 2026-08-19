@@ -70,6 +70,3 @@ const stringToString = taskArray.toString();
 
 console.log(stringJoin);
 console.log(stringToString);
-
-
-
