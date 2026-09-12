@@ -1,4 +1,3 @@
-const productCards = document.querySelectorAll('.product-card');
 const changeColorAllCardBtn = document.querySelector('#change-color-all-card');
 const changeColorFirstCardBtn = document.querySelector('#change-color-first-card');
 const openGoogleBtn = document.querySelector('#open-google');
@@ -13,15 +12,15 @@ const grayColorHash = '#c0c0c0';
 
 if (changeColorAllCardBtn) {
   changeColorAllCardBtn.addEventListener('click', () => {
-    productCards.forEach((card) => {
+    document.querySelectorAll('.product-card').forEach((card) => {
       card.style.backgroundColor = allCardsColor;
     });
   });
 }
 
 if (changeColorFirstCardBtn) {
-  const firstProductCard = document.querySelector('.product-card');
   changeColorFirstCardBtn.addEventListener('click', () => {
+    const firstProductCard = document.querySelector('.product-card');
     if (firstProductCard) {
       firstProductCard.style.backgroundColor = firstCardColor;
     }

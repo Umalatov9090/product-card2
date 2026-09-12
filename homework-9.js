@@ -70,3 +70,12 @@ const stringToString = taskArray.toString();
 
 console.log(stringJoin);
 console.log(stringToString);
+
+
+function getObj() { 
+    return {
+        id: 10,
+        name: 'Иван'  
+    }; 
+    
+}
