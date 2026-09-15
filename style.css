@@ -140,3 +140,14 @@ body {
 #toggle-color-button.active {
   background-color: yellow;
 }
+
+.color-card-green {
+  margin-top: 25px;
+  border-radius: 8px;
+  background-color: darkgreen;
+}
+
+.color-card-red {
+  background-color: darkred;
+} 
+
