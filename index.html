@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     
   </head>
-  <body>
+  <body id="top">
 
     <main class="page">
       <div class="page__container">
@@ -21,9 +22,10 @@
           <button id="open-google">Открыть страницу Google.com</button>
           <button id="output-console-log">Вывести сообщение в консоль лог</button>
           <button id="toggle-color-button">Переключить цвет кнопки</button>
+          <button id="open-registration-modal" type="button">Регистрация</button>
         </div>
       </div>
-        <ul class="products">
+        <ul class="products" id="products">
           <template id="card-template">
           <li class="products__item product-card">
             <div class="product-card__image">
@@ -133,10 +135,83 @@
         </ul>
       </div>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3 class="footer-title">Product Cards</h3>
+          <p class="footer-slogan">У Нас Самые Лучшие Продукты Для Кожи!</p>
+          <div class="social-icons" aria-label="Социальные сети">
+            <a href="#telegram" aria-label="Telegram"><i class="bi bi-telegram" aria-hidden="true"></i></a>
+            <a href="#vk" aria-label="ВКонтакте">vk</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="subscribe-title">Подпишись на наши акции</h4>
+          <form class="subscribe-form" id="subscribe-form">
+            <label class="visually-hidden" for="subscribe-email">Электронная почта</label>
+            <input type="email" placeholder="Введите email..." class="subscribe-input" id="subscribe-email" name="email" required>
+            <button type="submit" class="subscribe-btn">Подписаться</button>
+          </form>
+        </div>
+
+        <nav class="footer-col-right" id="contacts" aria-label="Быстрые ссылки">
+          <div class="footer-nav-wrapper">
+            <h4 class="footer-nav-title">Быстрые ссылки</h4>
+            <ul class="footer-links">
+              <li><a href="#top">Главная</a></li>
+              <li><a href="#products">Магазин</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>www.product-cards.com | All rights reserved</p>
+      </div>
+    </footer>
+    <div class="modal" id="registration-modal" aria-hidden="true">
+      <div class="overlay" data-close-modal></div>
+      <section class="modal__content" role="dialog" aria-modal="true" aria-labelledby="registration-title">
+        <button class="modal__close" type="button" aria-label="Закрыть окно" data-close-modal>&times;</button>
+        <h2 class="modal__title" id="registration-title">Регистрация</h2>
+        <p class="modal__description">Создайте аккаунт, чтобы быть в курсе новинок и акций.</p>
+        <form class="register-form" id="register-form" novalidate>
+          <div class="form-group">
+            <label for="reg-firstname">Имя:</label>
+            <input type="text" id="reg-firstname" name="firstName" placeholder="Иван" minlength="2" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-lastname">Фамилия:</label>
+            <input type="text" id="reg-lastname" name="lastName" placeholder="Иванов" minlength="2" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-dob">Дата рождения:</label>
+            <input type="date" id="reg-dob" name="birthDate" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-login">Логин:</label>
+            <input type="text" id="reg-login" name="login" placeholder="user123" minlength="4" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Пароль:</label>
+            <input type="password" id="reg-password" name="password" placeholder="••••••••" minlength="6" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-confirm-password">Повторите пароль:</label>
+            <input type="password" id="reg-confirm-password" name="passwordRepeat" placeholder="••••••••" minlength="6" required>
+          </div>
+          <button type="submit" class="submit-reg-btn">Зарегистрироваться</button>
+        </form>
+      </section>
+    </div>
     <script src="main.js"></script>
     <script src="homework-7.js"></script>
     <script src="homework-8.js"></script>
     <script type="module" src ="homework-9.js"></script>
     <script type="module" src ="homework-10.js"></script>
+    <script src="homework-11.js"></script>
   </body>
 </html>
