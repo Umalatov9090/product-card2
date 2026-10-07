@@ -1,136 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    
   </head>
-  <body id="top">
 
+  <body id="top">
     <main class="page">
       <div class="page__container">
         <h1 class="title">Выбери свой продукт</h1>
+
         <div class="live-buttons">
-          <button id="change-color-all-card">Сменить цвет всех карточек</button>
-          <button id="change-color-first-card">Сменить цвет первой карточки</button>
-          <button id="open-google">Открыть страницу Google.com</button>
-          <button id="output-console-log">Вывести сообщение в консоль лог</button>
-          <button id="toggle-color-button">Переключить цвет кнопки</button>
+          <button id="change-color-all-card" type="button">Сменить цвет всех карточек</button>
+          <button id="change-color-first-card" type="button">Сменить цвет первой карточки</button>
+          <button id="open-google" type="button">Открыть страницу Google.com</button>
+          <button id="output-console-log" type="button">Вывести сообщение в консоль лог</button>
+          <button id="toggle-color-button" type="button">Переключить цвет кнопки</button>
           <button id="open-registration-modal" type="button">Регистрация</button>
         </div>
       </div>
+
+      <div class="products-wrapper">
         <ul class="products" id="products">
           <template id="card-template">
-          <li class="products__item product-card">
-            <div class="product-card__image">
-              <img class="product-card__img" src="images/photo_1.jpg" alt="Увлажняющий мусс">
-            </div>
-            <p class="product-card__label">
-              <span class="product-card__skin-type">для нормальной кожи</span>
-            </p>
-            <h2 class="product-card__name">Увлажняющий мусс</h2>
-            <p class="product-card__description">Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой.</p>
-            <span class="product-card__compound-label">Состав:</span>
-            <ul class="product-card__components">
-              <li class="product-card__component">активные натуральные комплексы</li>
-              <li class="product-card__component">витамины С, А, РР, В И Е</li>
-              <li class="product-card__component">солнцезащитные компоненты</li>
-            </ul>
-            <div class="product-card__price-row">
-              <b class="product-card__price-label">Цена:</b>
-              <span class="product-card__price-value">2 750 P</span>
-            </div>
-          </li>
+            <li class="products__item product-card">
+              <div class="product-card__image">
+                <img class="product-card__img" src="images/photo_1.jpg" alt="Увлажняющий мусс">
+              </div>
+              <p class="product-card__label">
+                <span class="product-card__skin-type">для нормальной кожи</span>
+              </p>
+              <h2 class="product-card__name">Увлажняющий мусс</h2>
+              <p class="product-card__description">Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой.</p>
+              <span class="product-card__compound-label">Состав:</span>
+              <ul class="product-card__components">
+                <li class="product-card__component">активные натуральные комплексы</li>
+                <li class="product-card__component">витамины С, А, РР, В И Е</li>
+                <li class="product-card__component">солнцезащитные компоненты</li>
+              </ul>
+              <div class="product-card__price-row">
+                <b class="product-card__price-label">Цена:</b>
+                <span class="product-card__price-value">2 750 P</span>
+              </div>
+            </li>
 
-          <li class="products__item product-card">
-            <div class="product-card__image">
-              <img class="product-card__img" src="images/photo_2.jpg" alt="Увлажняющая маска">
-            </div>
-            <p class="product-card__label">
-              <span class="product-card__skin-type">для нормальной кожи</span>
-            </p>
-            <h2 class="product-card__name">Увлажняющая маска</h2>
-            <p class="product-card__description">Способствует удерживанию влаги в верхних слоях кожи.</p>
-            <span class="product-card__compound-label">Состав:</span>
-            <ul class="product-card__components">
-              <li class="product-card__component">воски</li>
-              <li class="product-card__component">минералы</li>
-              <li class="product-card__component">масла</li>
-            </ul>
-            <div class="product-card__price-row">
-              <b class="product-card__price-label">Цена:</b>
-              <span class="product-card__price-value">3 500 P</span>
-            </div>
-          </li>
+            <li class="products__item product-card">
+              <div class="product-card__image">
+                <img class="product-card__img" src="images/photo_2.jpg" alt="Увлажняющая маска">
+              </div>
+              <p class="product-card__label">
+                <span class="product-card__skin-type">для нормальной кожи</span>
+              </p>
+              <h2 class="product-card__name">Увлажняющая маска</h2>
+              <p class="product-card__description">Способствует удерживанию влаги в верхних слоях кожи.</p>
+              <span class="product-card__compound-label">Состав:</span>
+              <ul class="product-card__components">
+                <li class="product-card__component">воски</li>
+                <li class="product-card__component">минералы</li>
+                <li class="product-card__component">масла</li>
+              </ul>
+              <div class="product-card__price-row">
+                <b class="product-card__price-label">Цена:</b>
+                <span class="product-card__price-value">3 500 P</span>
+              </div>
+            </li>
 
-          <li class="products__item product-card">
-            <div class="product-card__image">
-              <img class="product-card__img" src="images/photo_3.jpg" alt="Гель для умывания">
-            </div>
-            <p class="product-card__label">
-              <span class="product-card__skin-type">для нормальной кожи</span>
-            </p>
-            <h2 class="product-card__name">Гель для умывания</h2>
-            <p class="product-card__description">Интенсивно очищает, не повреждает защитный барьер кожи.</p>
-            <span class="product-card__compound-label">Состав:</span>
-            <ul class="product-card__components">
-              <li class="product-card__component">минералы</li>
-              <li class="product-card__component">витамины С, А, РР, В И Е</li>
-              <li class="product-card__component">солнцезащитные компоненты</li>
-            </ul>
-            <div class="product-card__price-row">
-              <b class="product-card__price-label">Цена:</b>
-              <span class="product-card__price-value">1 650 P</span>
-            </div>
-          </li>
+            <li class="products__item product-card">
+              <div class="product-card__image">
+                <img class="product-card__img" src="images/photo_3.jpg" alt="Гель для умывания">
+              </div>
+              <p class="product-card__label">
+                <span class="product-card__skin-type">для нормальной кожи</span>
+              </p>
+              <h2 class="product-card__name">Гель для умывания</h2>
+              <p class="product-card__description">Интенсивно очищает, не повреждает защитный барьер кожи.</p>
+              <span class="product-card__compound-label">Состав:</span>
+              <ul class="product-card__components">
+                <li class="product-card__component">минералы</li>
+                <li class="product-card__component">витамины С, А, РР, В И Е</li>
+                <li class="product-card__component">солнцезащитные компоненты</li>
+              </ul>
+              <div class="product-card__price-row">
+                <b class="product-card__price-label">Цена:</b>
+                <span class="product-card__price-value">1 650 P</span>
+              </div>
+            </li>
 
-          <li class="products__item product-card">
-            <div class="product-card__image">
-              <img class="product-card__img" src="images/photo_4.jpg" alt="Подарочный набор №1">
-            </div>
-            <p class="product-card__label">
-              <span class="product-card__skin-type">для нормальной кожи</span>
-            </p>
-            <h2 class="product-card__name">Подарочный набор №1</h2>
-            <p class="product-card__description">Набор, состоящий из увлажняющего крема и маски.</p>
-            <span class="product-card__compound-label">Состав:</span>
-            <ul class="product-card__components">
-              <li class="product-card__component">воски</li>
-              <li class="product-card__component">минералы</li>
-              <li class="product-card__component">масла</li>
-            </ul>
-            <div class="product-card__price-row">
-              <b class="product-card__price-label">Цена:</b>
-              <span class="product-card__price-value">4 750 P</span>
-            </div>
-          </li>
+            <li class="products__item product-card">
+              <div class="product-card__image">
+                <img class="product-card__img" src="images/photo_4.jpg" alt="Подарочный набор №1">
+              </div>
+              <p class="product-card__label">
+                <span class="product-card__skin-type">для нормальной кожи</span>
+              </p>
+              <h2 class="product-card__name">Подарочный набор №1</h2>
+              <p class="product-card__description">Набор, состоящий из увлажняющего крема и маски.</p>
+              <span class="product-card__compound-label">Состав:</span>
+              <ul class="product-card__components">
+                <li class="product-card__component">воски</li>
+                <li class="product-card__component">минералы</li>
+                <li class="product-card__component">масла</li>
+              </ul>
+              <div class="product-card__price-row">
+                <b class="product-card__price-label">Цена:</b>
+                <span class="product-card__price-value">4 750 P</span>
+              </div>
+            </li>
 
-          <li class="products__item product-card">
-            <div class="product-card__image">
-              <img class="product-card__img" src="images/photo_5.jpg" alt="Подарочный набор №5">
-            </div>
-            <p class="product-card__label">
-              <span class="product-card__skin-type">для нормальной кожи</span>
-            </p>
-            <h2 class="product-card__name">Подарочный набор №5</h2>
-            <p class="product-card__description">Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.</p>
-            <span class="product-card__compound-label">Состав:</span>
-            <ul class="product-card__components">
-              <li class="product-card__component">воски</li>
-              <li class="product-card__component">минералы</li>
-              <li class="product-card__component">масла</li>
-            </ul>
-            <div class="product-card__price-row">
-              <b class="product-card__price-label">Цена:</b>
-              <span class="product-card__price-value">7 520 P</span>
-            </div>
-          </li>
+            <li class="products__item product-card">
+              <div class="product-card__image">
+                <img class="product-card__img" src="images/photo_5.jpg" alt="Подарочный набор №5">
+              </div>
+              <p class="product-card__label">
+                <span class="product-card__skin-type">для нормальной кожи</span>
+              </p>
+              <h2 class="product-card__name">Подарочный набор №5</h2>
+              <p class="product-card__description">Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.</p>
+              <span class="product-card__compound-label">Состав:</span>
+              <ul class="product-card__components">
+                <li class="product-card__component">воски</li>
+                <li class="product-card__component">минералы</li>
+                <li class="product-card__component">масла</li>
+              </ul>
+              <div class="product-card__price-row">
+                <b class="product-card__price-label">Цена:</b>
+                <span class="product-card__price-value">7 520 P</span>
+              </div>
+            </li>
           </template>
         </ul>
       </div>
@@ -141,9 +144,14 @@
         <div class="footer-col">
           <h3 class="footer-title">Product Cards</h3>
           <p class="footer-slogan">У Нас Самые Лучшие Продукты Для Кожи!</p>
+
           <div class="social-icons" aria-label="Социальные сети">
-            <a href="#telegram" aria-label="Telegram"><i class="bi bi-telegram" aria-hidden="true"></i></a>
-            <a href="#vk" aria-label="ВКонтакте">vk</a>
+            <a href="#telegram" aria-label="Telegram">
+              <img class="telegram-icon" src="images/telegram.png" alt="Telegram" aria-hidden="true">
+            </a>
+            <a href="#vk" aria-label="ВКонтакте">
+              <img class="vk-icon" src="images/vk.png" alt="ВКонтакте" aria-hidden="true">
+            </a>
           </div>
         </div>
 
@@ -167,51 +175,63 @@
           </div>
         </nav>
       </div>
+
       <hr class="footer-divider">
+
       <div class="footer-bottom">
-        <p>www.product-cards.com | All rights reserved</p>
+        <p>&copy; www.product-cards.com | All rights reserved</p>
       </div>
     </footer>
+
     <div class="modal" id="registration-modal" aria-hidden="true">
       <div class="overlay" data-close-modal></div>
+
       <section class="modal__content" role="dialog" aria-modal="true" aria-labelledby="registration-title">
         <button class="modal__close" type="button" aria-label="Закрыть окно" data-close-modal>&times;</button>
         <h2 class="modal__title" id="registration-title">Регистрация</h2>
         <p class="modal__description">Создайте аккаунт, чтобы быть в курсе новинок и акций.</p>
+
         <form class="register-form" id="register-form" novalidate>
           <div class="form-group">
             <label for="reg-firstname">Имя:</label>
             <input type="text" id="reg-firstname" name="firstName" placeholder="Иван" minlength="2" required>
           </div>
+
           <div class="form-group">
             <label for="reg-lastname">Фамилия:</label>
             <input type="text" id="reg-lastname" name="lastName" placeholder="Иванов" minlength="2" required>
           </div>
+
           <div class="form-group">
             <label for="reg-dob">Дата рождения:</label>
             <input type="date" id="reg-dob" name="birthDate" required>
           </div>
+
           <div class="form-group">
             <label for="reg-login">Логин:</label>
             <input type="text" id="reg-login" name="login" placeholder="user123" minlength="4" required>
           </div>
+
           <div class="form-group">
             <label for="reg-password">Пароль:</label>
             <input type="password" id="reg-password" name="password" placeholder="••••••••" minlength="6" required>
           </div>
+
           <div class="form-group">
             <label for="reg-confirm-password">Повторите пароль:</label>
             <input type="password" id="reg-confirm-password" name="passwordRepeat" placeholder="••••••••" minlength="6" required>
           </div>
+
           <button type="submit" class="submit-reg-btn">Зарегистрироваться</button>
         </form>
       </section>
     </div>
+
     <script src="main.js"></script>
     <script src="homework-7.js"></script>
     <script src="homework-8.js"></script>
-    <script type="module" src ="homework-9.js"></script>
-    <script type="module" src ="homework-10.js"></script>
+    <script type="module" src="homework-9.js"></script>
+    <script type="module" src="homework-10.js"></script>
     <script src="homework-11.js"></script>
   </body>
 </html>

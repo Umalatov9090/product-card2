@@ -44,6 +44,7 @@ body {
   margin-top: 0px;
   padding: 5px;
 }
+
 .product-card__components li {
   margin-bottom: 5px;
   margin-left: 10px;
@@ -84,7 +85,6 @@ body {
   margin-top: 18px;
   line-height: 24px;
   font-size: 20px;
-
 }
 
 .product-card__price-label {
@@ -277,7 +277,7 @@ body.modal-open {
 
 .color-card-red {
   background-color: darkred;
-} 
+}
 
 .site-footer {
   width: 1728px;
@@ -289,6 +289,7 @@ body.modal-open {
   border-radius: 10px;
   color: #f2f2f2;
   background-color: #3b3b3b;
+  position: relative;
 }
 
 .footer-container {
@@ -406,23 +407,30 @@ body.modal-open {
 }
 
 .social-icons {
+  position: absolute;
+  top: 214px;
+  left: 84px;
   display: flex;
-  gap: 22px;
-  margin-top: 28px;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
 }
 
 .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #f2f2f2;
-  font-size: 21px;
-  font-weight: 700;
+  text-decoration: none;
 }
 
-.social-icons .bi-telegram {
+.telegram-icon,
+.vk-icon {
   display: block;
-  width: 24px;
-  height: 14px;
-  font-size: 14px;
-  line-height: 14px;
+  width: 20.9978px;
+  height: 17.6094px;
+  object-fit: contain;
+  opacity: 1;
 }
 
 .footer-bottom {
@@ -506,4 +514,3 @@ body.modal-open {
     margin-top: 32px;
   }
 }
-
