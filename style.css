@@ -44,6 +44,7 @@ body {
   margin-top: 0px;
   padding: 5px;
 }
+
 .product-card__components li {
   margin-bottom: 5px;
   margin-left: 10px;
@@ -84,7 +85,6 @@ body {
   margin-top: 18px;
   line-height: 24px;
   font-size: 20px;
-
 }
 
 .product-card__price-label {
@@ -133,6 +133,134 @@ body {
   border-color: #aaaaaa;
 }
 
+#open-registration-modal {
+  color: #fff;
+  border-color: #515076;
+  background-color: #515076;
+}
+
+#open-registration-modal:hover {
+  background-color: #39385e;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal.modal-showed {
+  display: flex;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 35, 0.62);
+}
+
+.modal__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 440px);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 36px;
+  border-radius: 20px;
+  color: #33324f;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  color: #777;
+  background: transparent;
+  font: inherit;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal__close:hover,
+.modal__close:focus-visible {
+  color: #222;
+}
+
+.modal__title {
+  margin: 0 32px 8px 0;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.modal__description {
+  margin: 0 0 24px;
+  color: #77768c;
+  line-height: 1.5;
+}
+
+.register-form {
+  display: grid;
+  gap: 9px;
+  max-height: 62vh;
+  overflow-y: auto;
+}
+
+.form-group {
+  display: grid;
+  gap: 7px;
+}
+
+.form-group label {
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #d9d8e3;
+  border-radius: 9px;
+  color: #33324f;
+  font: inherit;
+}
+
+.form-group input:focus {
+  outline: 2px solid #aaa8d0;
+  outline-offset: 1px;
+}
+
+.submit-reg-btn {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 15px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: #515076;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-reg-btn:hover {
+  background: #39385e;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 #toggle-color-button {
   transition: background-color 0.2s;
 }
@@ -149,5 +277,256 @@ body {
 
 .color-card-red {
   background-color: darkred;
-} 
+}
 
+.site-footer {
+  width: 100%;
+  min-height: 425px;
+  margin-top: 90px;
+  padding: 80px 40px 22px;
+  color: #f2f2f2;
+  background-color: #3b3b3b;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.footer-title {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.footer-slogan {
+  margin: 12px 0 0;
+  color: #dedede;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.footer-col-right {
+  justify-self: end;
+  min-width: 140px;
+}
+
+.footer-nav-wrapper {
+  width: max-content;
+  max-width: 100%;
+}
+
+.footer-nav-title {
+  margin: 0 0 10px;
+  color: #ededed;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  list-style: none;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: #bdbdbd;
+}
+
+.subscribe-title,
+.footer-nav-title {
+  color: #ededed;
+}
+
+.subscribe-title {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.subscribe-form {
+  display: flex;
+  width: 100%;
+  max-width: 422px;
+  height: 54px;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 0 10px 0 24px;
+  background-color: #fff;
+}
+
+.subscribe-input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  padding: 12px 8px 12px 0;
+  color: #333;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+}
+
+.subscribe-input:focus {
+  outline: none;
+}
+
+.subscribe-btn {
+  align-self: center;
+  min-width: 110px;
+  min-height: 24px;
+  border: 0;
+  border-left: 1px solid #bdbdbd;
+  padding: 0 0 0 12px;
+  color: #222;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus-visible {
+  color: #000;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 18px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.social-icons .telegram-icon,
+.social-icons .vk-icon {
+  display: block;
+  width: 21px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 1;
+  flex-shrink: 0;
+}
+
+.social-icons a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 36px auto 0;
+  color: #dedede;
+  font-size: 13px;
+}
+
+.footer-divider {
+  width: 58px;
+  margin: 175px auto 0;
+  border: 0;
+  border-top: 1px solid #aaa;
+}
+
+.footer-bottom p {
+  margin: 0;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 800px) {
+  .site-footer {
+    padding: 48px 28px 28px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-container > .footer-col:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footer-col-right {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .footer-divider {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-footer {
+    padding: 40px 20px 24px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-container > .footer-col:nth-child(2) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .footer-col-right {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .subscribe-form {
+    margin-left: 0;
+  }
+
+  .footer-divider {
+    margin-top: 40px;
+  }
+}
