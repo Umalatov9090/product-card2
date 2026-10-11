@@ -4,6 +4,10 @@ const openGoogleBtn = document.querySelector('#open-google');
 const outputConsoleLogBtn = document.querySelector('#output-console-log');
 const toggleColorBtn = document.querySelector('#toggle-color-button');
 const title = document.querySelector('.title');
+const registrationButton = document.querySelector('#open-registration-modal');
+const registrationModal = document.querySelector('#registration-modal');
+const registrationForm = document.querySelector('#register-form');
+let user;
 
 const allCardsColor = '#ff1500';
 const firstCardColor = '#0000ff';
@@ -55,3 +59,52 @@ if (toggleColorBtn) {
 
   });
 }
+
+registrationButton.addEventListener('click', () => {
+  registrationModal.classList.add('modal-showed');
+  registrationModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+});
+
+function closeModal() {
+  registrationModal.classList.remove('modal-showed');
+  registrationModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+registrationModal.querySelector('.modal__close').addEventListener('click', closeModal);
+registrationModal.querySelector('.overlay').addEventListener('click', closeModal);
+
+registrationForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const password = registrationForm.elements.password.value;
+  const passwordRepeat = registrationForm.elements.passwordRepeat;
+
+  passwordRepeat.setCustomValidity(
+    password === passwordRepeat.value ? '' : 'Пароли не совпадают'
+  );
+
+  if (!registrationForm.checkValidity()) {
+    alert('Регистрация отклонена. Проверьте правильность заполнения формы.');
+    registrationForm.reportValidity();
+    return;
+  }
+
+  user = {
+    firstName: registrationForm.elements.firstName.value,
+    lastName: registrationForm.elements.lastName.value,
+    birthDate: registrationForm.elements.birthDate.value,
+    login: registrationForm.elements.login.value,
+    password: password,
+    passwordRepeat: passwordRepeat.value,
+    createdOn: new Date()
+  };
+
+  console.log(user);
+  closeModal();
+});
+
+registrationForm.elements.passwordRepeat.addEventListener('input', () => {
+  registrationForm.elements.passwordRepeat.setCustomValidity('');
+});
