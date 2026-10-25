@@ -1,5 +1,8 @@
+import { BeautyProduct } from './beautyProduct.js';
+import { GiftSet } from './giftSet.js';
+
 export const products = [
-  {
+  new BeautyProduct({
     id: 1,
     name: 'Увлажняющий мусс',
     image: 'images/photo_1.jpg',
@@ -12,8 +15,8 @@ export const products = [
     ],
     price: 2750,
     currency: '₽'
-  },
-  {
+  }),
+  new BeautyProduct({
     id: 2,
     name: 'Увлажняющая маска',
     image: 'images/photo_2.jpg',
@@ -22,8 +25,8 @@ export const products = [
     ingredients: ['воски', 'минералы', 'масла'],
     price: 3500,
     currency: '₽'
-  },
-  {
+  }),
+  new BeautyProduct({
     id: 3,
     name: 'Гель для умывания',
     image: 'images/photo_3.jpg',
@@ -36,8 +39,8 @@ export const products = [
     ],
     price: 1650,
     currency: '₽'
-  },
-  {
+  }),
+  new GiftSet({
     id: 4,
     name: 'Подарочный набор №1',
     image: 'images/photo_4.jpg',
@@ -46,8 +49,8 @@ export const products = [
     ingredients: ['воски', 'минералы', 'масла'],
     price: 4750,
     currency: '₽'
-  },
-  {
+  }),
+  new GiftSet({
     id: 5,
     name: 'Подарочный набор №5',
     image: 'images/photo_5.jpg',
@@ -56,5 +59,5 @@ export const products = [
     ingredients: ['воски', 'минералы', 'масла'],
     price: 7520,
     currency: '₽'
-  }
+  })
 ];

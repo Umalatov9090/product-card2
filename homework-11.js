@@ -1,3 +1,6 @@
+import { Form } from './Form.js';
+import { Modal } from './Modal.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Форма подписки на рассылку
@@ -26,43 +29,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2. Модальное окно и форма регистрации
-  let user = null;
-
   const openModalButton = document.querySelector('#open-registration-modal');
-  const modal = document.querySelector('#registration-modal');
-  const regForm = document.querySelector('#register-form');
+  const modalElement = document.querySelector('#registration-modal');
+  const formElement = document.querySelector('#register-form');
   const passwordInput = document.querySelector('#reg-password');
   const confirmPasswordInput = document.querySelector('#reg-confirm-password');
 
-  // Убеждаемся, что все ключевые элементы модалки присутствуют на странице
-  if (openModalButton && modal && regForm && passwordInput && confirmPasswordInput) {
-    const closeModal = () => {
-      modal.classList.remove('modal-showed');
-      modal.setAttribute('aria-hidden', 'true');
-    };
+  if (openModalButton && modalElement && formElement && passwordInput && confirmPasswordInput) {
+    const modal = new Modal('registration-modal');
+    const form = new Form('register-form');
 
     openModalButton.addEventListener('click', () => {
-      modal.classList.add('modal-showed');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-
-    modal.addEventListener('click', (event) => {
-      if (event.target.closest('[data-close-modal]')) {
-        closeModal();
-      }
+      modal.open();
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && modal.classList.contains('modal-showed')) {
-        closeModal();
+      if (event.key === 'Escape' && modal.isOpen()) {
+        modal.close();
       }
     });
 
-    regForm.addEventListener('submit', (event) => {
+    formElement.addEventListener('submit', (event) => {
       event.preventDefault();
 
-      if (!regForm.checkValidity()) {
-        regForm.reportValidity();
+      if (!form.isValid()) {
         alert('Регистрация отклонена: проверьте заполнение полей.');
         return;
       }
@@ -73,21 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const formData = new FormData(regForm);
-
-      user = {
-        firstName: formData.get('firstName'),
-        lastName: formData.get('lastName'),
-        birthDate: formData.get('birthDate'),
-        login: formData.get('login'),
-        password: formData.get('password'),
-        passwordRepeat: formData.get('passwordRepeat'),
+      const user = {
+        ...form.getValues(),
         createdOn: new Date(),
       };
 
       console.log('Регистрация успешна:', user);
-      regForm.reset();
-      closeModal();
+      form.reset();
+      modal.close();
     });
   }
 });
