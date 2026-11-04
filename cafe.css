@@ -1,0 +1,96 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: #273c2e;
+  background: #f8f6f0;
+  font: 15px Arial, sans-serif;
+}
+
+.header, .content, footer {
+  max-width: 1050px;
+  margin: auto;
+  padding: 22px;
+}
+
+.header, .content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.header a { color: #315b43; text-decoration: none; }
+.logo { font-size: 21px; font-weight: bold; }
+
+.hero {
+  padding: 75px 20px;
+  color: white;
+  background: #315b43;
+  text-align: center;
+}
+
+.hero p { color: #e7bd8a; }
+.hero h1 { margin: 16px 0 28px; font-size: clamp(32px, 6vw, 52px); }
+
+.button, .drink button, .filters button, #order button {
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 15px;
+  color: white;
+  background: #315b43;
+  font: inherit;
+  cursor: pointer;
+}
+
+.hero .button { display: inline-block; color: #315b43; background: white; text-decoration: none; }
+.content { align-items: flex-start; }
+.menu { flex: 1; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.filters button { color: #315b43; background: #e9eee7; }
+.filters .active { color: white; background: #315b43; }
+
+.drinks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.drink, .cart {
+  border: 1px solid #e8e4da;
+  border-radius: 8px;
+  padding: 18px;
+  background: white;
+}
+
+.drink .icon { font-size: 32px; }
+.drink .orange-tea { position: relative; display: inline-block; }
+.drink .orange-tea::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f28c28;
+  content: '';
+  transform: translate(-50%, -50%);
+}
+.drink h3 { margin-bottom: 8px; }
+.drink p { color: #657365; }
+.drink button { width: 100%; }
+.cart { width: 300px; }
+.cart p { line-height: 1.8; }
+#order button { padding: 5px 8px; font-size: 12px; }
+#checkout { width: 100%; }
+#checkout:disabled { background: #aab4aa; cursor: default; }
+#message { color: #315b43; line-height: 1.6; }
+footer { color: #657365; text-align: center; }
+
+@media (max-width: 650px) {
+  .content { flex-direction: column; }
+  .menu, .cart { width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .drinks { grid-template-columns: 1fr; }
+}
