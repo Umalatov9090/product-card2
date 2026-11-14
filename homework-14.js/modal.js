@@ -1,45 +1,47 @@
 export class Modal {
-    constructor(modalId, buttonId, shouldCloseOnOverlay) {
+    constructor(modalId, buttonId, shouldCloseOnOverlay = false) {
         this.modal = document.getElementById(modalId);
         this.overlay = document.getElementById('overlay');
-
         this.shouldCloseOnOverlay = shouldCloseOnOverlay;
+        this.overlayClickHandler = () => this.close();
 
-        // Обработчик оверлея
-        this.overlayClickHandler = () => {
-            this.close();
-        };
+        const openButton = document.getElementById(buttonId);
+        const closeButton = this.modal?.querySelector('.modal-close-button');
 
-        this.#initOpen(buttonId);
-        this.#initClose();
+        if (!this.modal || !this.overlay || !openButton || !closeButton) {
+            throw new Error(`Не удалось настроить модальное окно "${modalId}"`);
+        }
+
+        openButton.addEventListener('click', () => this.open());
+        closeButton.addEventListener('click', () => this.close());
     }
 
     open() {
+        if (Modal.activeModal && Modal.activeModal !== this) {
+            Modal.activeModal.close();
+        }
+
         this.modal.classList.add('modal-showed');
+        this.modal.setAttribute('aria-hidden', 'false');
         this.overlay.classList.add('overlay-showed');
 
-        // Закрытие по клику на оверлей
         if (this.shouldCloseOnOverlay) {
-            this.overlay.addEventListener(
-                'click',
-                this.overlayClickHandler
-            );Collapse commentComment on lines R23 to R26freecree commented on Nov 14, 2026 freecreeon Nov 14, 2026More actionsв одну строку было бы удобнее, т.к строка не сильно длиннаяReactWrite a replyResolve comment
+            this.overlay.addEventListener('click', this.overlayClickHandler);
         }
+
+        Modal.activeModal = this;
     }
 
     close() {
         this.modal.classList.remove('modal-showed');
-
-        // Удаляем обработчик оверлея
+        this.modal.setAttribute('aria-hidden', 'true');
         this.overlay.removeEventListener('click', this.overlayClickHandler);
 
-        // Проверяем открытые окна
-        const openedModals = document.querySelectorAll(
-            '.modal.modal-showed'
-        );
+        if (Modal.activeModal === this) {
+            Modal.activeModal = null;
+        }
 
-        // Скрываем оверлей, если окон нет
-        if (openedModals.length === 0) {
+        if (!document.querySelector('.modal.modal-showed')) {
             this.overlay.classList.remove('overlay-showed');
         }
     }
@@ -47,22 +49,6 @@ export class Modal {
     isOpen() {
         return this.modal.classList.contains('modal-showed');
     }
-
-    #initOpen(buttonId) {
-        const button = document.getElementById(buttonId);
-
-        button.addEventListener('click', () => {
-            this.open();
-        });
-    }
-
-    #initClose() {
-        const closeButton = this.modal.querySelector(
-            '.modal-close-button'
-        );
-
-        closeButton.addEventListener('click', () => {
-            this.close();
-        });
-    }
 }
+
+Modal.activeModal = null;

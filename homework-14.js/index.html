@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Модальные окна</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
 	<button class="button" id="auth-button">Аутентификация</button>
 
 	<div id="registration-modal" class="modal">
-		<button id="registration-close" class="modal-close-button" data-modal-close>X</button>
+		<button id="registration-close" class="modal-close-button" type="button" aria-label="Закрыть">×</button>
 		<h1>Регистрация</h1>
 		<span>Пароль</span>
 		<span>Повторите пароль</span>
@@ -22,12 +22,12 @@
 	</div>
 
 	<div id="auth-modal" class="modal">
-		<button id="auth-close" class="modal-close-button" data-modal-close>X</button>
+		<button id="auth-close" class="modal-close-button" type="button" aria-label="Закрыть">×</button>
 		<h1>Аутентификация</h1>
 		<p>Логин</p>
 		<p>Пароль</p>
 	</div>
 
-	<script type="module" src="script.js"></script>
+	<script type="module" src="main.js"></script>
 </body>
 </html>
